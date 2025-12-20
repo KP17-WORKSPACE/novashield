@@ -310,13 +310,14 @@
             border-radius: 8px;
             border: none;
             font-weight: 500;
-            transition: all 0.3s;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
         }
         
+        /* Keep single theme color for hover (no color shift) */
         .btn-primary-custom:hover {
-            background-color: #3d6ae8;
+            background-color: var(--blue-accent);
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(74, 124, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(74, 124, 255, 0.08);
         }
         
         .btn-outline-custom {
@@ -647,7 +648,7 @@
                             </svg>
                         </div>
                         <h5 class="fw-bold mb-3">Attack Surface Monitoring</h5>
-                        <p class="text-secondary small">Defennces analyze the atrices 2 and batect</p>
+                        <p class="text-secondary small">Continuous monitoring of your attack surface to prevent breaches.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -659,7 +660,7 @@
                             </svg>
                         </div>
                         <h5 class="fw-bold mb-3">Manage Risk</h5>
-                        <p class="text-secondary small">Risk reports improve mek patienate and all system risk</p>
+                        <p class="text-secondary small">Actionable risk reports to prioritize remediation and reduce exposure.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -684,7 +685,7 @@
                             </svg>
                         </div>
                         <h5 class="fw-bold mb-3">Respond quickly</h5>
-                        <p class="text-secondary small">Respond accisions and dacort response</p>
+                        <p class="text-secondary small">Respond to incidents and coordinate response efforts.</p>
                     </div>
                 </div>
             </div>
@@ -759,31 +760,31 @@
                                 <div class="risk-legend mt-3">
                                     <div class="risk-legend-item">
                                         <span class="risk-dot" style="background-color: #ff6b35;"></span>
-                                        <span>Aapension</span>
+                                        <span>Anomalies</span>
                                     </div>
                                     <div class="risk-legend-item">
                                         <span class="risk-dot" style="background-color: #f7931e;"></span>
-                                        <span>Ratcasanbut</span>
+                                        <span>Risk scoring</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="risk-card mt-3">
-                                <h6 class="mb-3">Top suinerbilities</h6>
+                                <h6 class="mb-3">Top vulnerabilities</h6>
                                 <div class="vulnerability-item">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="vulnerability-left">
                                             <i class="bi bi-shield-exclamation vulnerability-icon" style="color:var(--purple-accent);"></i>
-                                            <span class="text-secondary small">Recvoy-sansacabilities</span>
+                                            <span class="text-secondary small">Critical exposures</span>
                                         </div>
-                                        <span class="severity-badge severity-critical">Weltica!</span>
+                                        <span class="severity-badge severity-critical">Critical</span>
                                     </div>
                                 </div>
                                 <div class="vulnerability-item">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="vulnerability-left">
                                             <i class="bi bi-file-earmark-text vulnerability-icon" style="color:var(--blue-accent);"></i>
-                                            <span class="text-secondary small">Recordinss offectins</span>
+                                            <span class="text-secondary small">Configuration issues</span>
                                         </div>
                                         <span class="severity-badge severity-high">High</span>
                                     </div>
@@ -792,9 +793,9 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="vulnerability-left">
                                             <i class="bi bi-shield-lock vulnerability-icon" style="color:var(--cyan-accent);"></i>
-                                            <span class="text-secondary small">Trusfecmit trestore</span>
+                                            <span class="text-secondary small">Third-party risk</span>
                                         </div>
-                                        <span class="severity-badge severity-higher">Higher</span>
+                                        <span class="severity-badge severity-higher">Medium</span>
                                     </div>
                                 </div>
                             </div>
@@ -804,7 +805,7 @@
                             <div class="risk-card">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <h6>Risk distribution</h6>
-                                    <span class="text-secondary small"><i class="bi bi-card-list"></i> Riscenterstore <i class="bi bi-caret-down-fill"></i></span>
+                                    <span class="text-secondary small"><i class="bi bi-card-list"></i> Risk center <i class="bi bi-caret-down-fill"></i></span>
                                 </div>
                                 <div class="distribution-chart mb-3">
                                     <div class="donut-circle">
@@ -869,11 +870,11 @@
                 <div class="col-lg-6 mb-4">
                     <div class="testimonial-card">
                         <div class="d-flex gap-3 align-items-start">
-                            <img src="https://i.pravatar.cc/80?img=1" alt="Jarsh Thonpeen" class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/80?img=1" alt="A. Thomas" class="testimonial-avatar">
                             <div>
-                                <p class="text-secondary mb-3">"grrif lude necalty Wank te:mirori; Kililer experlence expertan ramplor ere doteat_ and explor:"</p>
-                                <h6 class="fw-bold mb-1">Jarsh Thonpeen</h6>
-                                <p class="text-secondary small mb-0">Chief information Security Officer</p>
+                                <p class="text-secondary mb-3">"NovaShield helped us reduce false positives and speed up incident response — the dashboard and alerts are excellent."</p>
+                                <h6 class="fw-bold mb-1">A. Thomas</h6>
+                                <p class="text-secondary small mb-0">Chief Information Security Officer, Acme Corp</p>
                             </div>
                         </div>
                     </div>
@@ -881,11 +882,11 @@
                 <div class="col-lg-6 mb-4">
                     <div class="testimonial-card">
                         <div class="d-flex gap-3 align-items-start">
-                            <img src="https://i.pravatar.cc/80?img=12" alt="James Cafter" class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/80?img=12" alt="M. Rivera" class="testimonial-avatar">
                             <div>
-                                <p class="text-secondary mb-3">"Outtaine priting aterts grr le anci. Riste's:n, ceired comprinctinnaiter tt isk at lmora an resu:an G__suglic</p>
-                                <h6 class="fw-bold mb-1">James Cafter</h6>
-                                <p class="text-secondary small mb-0">IT Director</p>
+                                <p class="text-secondary mb-3">"The insights from NovaShield allowed us to prioritize fixes and significantly lowered our exposure window."</p>
+                                <h6 class="fw-bold mb-1">M. Rivera</h6>
+                                <p class="text-secondary small mb-0">Head of Security Operations, ByteScale</p>
                             </div>
                         </div>
                     </div>
@@ -908,7 +909,7 @@
                             </svg>
                         </div>
                         <h5 class="fw-bold mb-3">Identify threats</h5>
-                                <p class="text-secondary">Deteck ons e information</p>
+                                <p class="text-secondary">Detect and enrich threat intelligence</p>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
@@ -920,7 +921,7 @@
                             </svg>
                         </div>
                         <h5 class="fw-bold mb-3">Manage Risk</h5>
-                        <p class="text-secondary">Automate ons e a</p>
+                        <p class="text-secondary">Automate workflows and scale security operations across your environment.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
@@ -931,8 +932,8 @@
                                 <path d="M9 12l2 2 4-4"/>
                             </svg>
                         </div>
-                        <h5 class="fw-bold mb-3">Resptunoes</h5>
-                        <p class="text-secondary">Creat ons streamead</p>
+                        <h5 class="fw-bold mb-3">Rapid Response</h5>
+                        <p class="text-secondary">Create streamlined incident response processes</p>
                     </div>
                 </div>
             </div>
