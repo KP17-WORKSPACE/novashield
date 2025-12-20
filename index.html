@@ -772,20 +772,29 @@
                                 <h6 class="mb-3">Top suinerbilities</h6>
                                 <div class="vulnerability-item">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <span class="text-secondary small">▢ Recvoy-sansacabilities</span>
-                                        <span class="badge bg-danger small">Weltica!</span>
+                                        <div class="vulnerability-left">
+                                            <i class="bi bi-shield-exclamation vulnerability-icon" style="color:var(--purple-accent);"></i>
+                                            <span class="text-secondary small">Recvoy-sansacabilities</span>
+                                        </div>
+                                        <span class="severity-badge severity-critical">Weltica!</span>
                                     </div>
                                 </div>
                                 <div class="vulnerability-item">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <span class="text-secondary small">▢ Recordinss offectins</span>
-                                        <span class="badge bg-warning small">High</span>
+                                        <div class="vulnerability-left">
+                                            <i class="bi bi-file-earmark-text vulnerability-icon" style="color:var(--blue-accent);"></i>
+                                            <span class="text-secondary small">Recordinss offectins</span>
+                                        </div>
+                                        <span class="severity-badge severity-high">High</span>
                                     </div>
                                 </div>
                                 <div class="vulnerability-item">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <span class="text-secondary small">▢ Trusfecmit trestore</span>
-                                        <span class="badge bg-info small">Higher</span>
+                                        <div class="vulnerability-left">
+                                            <i class="bi bi-shield-lock vulnerability-icon" style="color:var(--cyan-accent);"></i>
+                                            <span class="text-secondary small">Trusfecmit trestore</span>
+                                        </div>
+                                        <span class="severity-badge severity-higher">Higher</span>
                                     </div>
                                 </div>
                             </div>
@@ -798,27 +807,26 @@
                                     <span class="text-secondary small">📋 Riscenterstore ▼</span>
                                 </div>
                                 <div class="distribution-chart mb-3">
-                                    <svg width="120" height="120" viewBox="0 0 120 120">
-                                        <circle cx="60" cy="60" r="50" fill="none" stroke="#8b5cf6" stroke-width="30" 
-                                                stroke-dasharray="94 314" transform="rotate(-90 60 60)"/>
-                                        <circle cx="60" cy="60" r="50" fill="none" stroke="#2dd4bf" stroke-width="30" 
-                                                stroke-dasharray="157 314" stroke-dashoffset="-94" transform="rotate(-90 60 60)"/>
-                                        <circle cx="60" cy="60" r="50" fill="none" stroke="#4a7cff" stroke-width="30" 
-                                                stroke-dasharray="63 314" stroke-dashoffset="-251" transform="rotate(-90 60 60)"/>
-                                    </svg>
+                                    <div class="donut-circle">
+                                        <div class="donut-inner"></div>
+                                        <div class="donut-center">
+                                            <div class="donut-score">64%</div>
+                                            <div class="donut-label">Secure</div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="distribution-list">
-                                    <div class="distribution-item">
-                                        <span class="text-secondary small">⊡ Jaide analysimis -</span>
+                                    <div class="distribution-item d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center gap-2"><span class="dot" style="background:#8b5cf6;"></span><span class="text-secondary small">Critical</span></div>
+                                        <div class="fw-bold">12</div>
                                     </div>
-                                    <div class="distribution-item">
-                                        <span class="text-secondary small">⊡ Aeterons</span>
+                                    <div class="distribution-item d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center gap-2"><span class="dot" style="background:#2dd4bf;"></span><span class="text-secondary small">Warning</span></div>
+                                        <div class="fw-bold">4</div>
                                     </div>
-                                    <div class="distribution-item">
-                                        <span class="text-secondary small">⊡ Terdinattions</span>
-                                    </div>
-                                    <div class="distribution-item">
-                                        <span class="text-secondary small">⊡ Cander visups ▼</span>
+                                    <div class="distribution-item d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center gap-2"><span class="dot" style="background:#4a7cff;"></span><span class="text-secondary small">Safe</span></div>
+                                        <div class="fw-bold">88</div>
                                     </div>
                                 </div>
                             </div>
@@ -1109,15 +1117,61 @@
     border-bottom: none;
 }
 
+/* Themed compact severity badges */
+.severity-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 999px;
+    min-width: 48px;
+    text-align: center;
+}
+.severity-critical { color: var(--purple-accent); background: rgba(139,92,246,0.10); border: 1px solid rgba(139,92,246,0.14); }
+.severity-high { color: var(--blue-accent); background: rgba(74,124,255,0.08); border: 1px solid rgba(74,124,255,0.10); }
+.severity-higher { color: var(--cyan-accent); background: rgba(45,212,191,0.08); border: 1px solid rgba(45,212,191,0.10); }
+
+/* Vulnerability item icons */
+.vulnerability-left { display:flex; align-items:center; gap:10px; }
+.vulnerability-icon { font-size:16px; line-height:1; display:inline-block; width:18px; text-align:center; }
+ .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+
 .distribution-chart {
     width: 120px;
     height: 120px;
     margin: 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
+.donut-circle {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background: conic-gradient(#8b5cf6 0% 28%, #2dd4bf 28% 46%, #4a7cff 46% 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.donut-inner {
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.04);
+}
+.donut-center { position:absolute; text-align:center; color:var(--text-primary); }
+.donut-score { font-size:20px; font-weight:700; }
+.donut-label { font-size:12px; color:var(--text-secondary); margin-top: -6px; }
 
-.distribution-list {
-    margin-top: 20px;
-}
+.distribution-list { margin-top: 20px; }
+.distribution-item { padding: 8px 0; display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.distribution-item:last-child { border-bottom:none; }
+.dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
 
 .distribution-item {
     padding: 8px 0;
