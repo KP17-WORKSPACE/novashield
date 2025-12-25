@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — NovaShield</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root{--dark-navy:#0a0e27;--card-bg:#141b2d;--text-primary:#fff;--text-secondary:#a8b2d1;--blue-accent:#4a7cff}
+        body{background:var(--dark-navy);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;margin:0}
+        .navbar{background:transparent;padding:18px 0}
+        .container-hero{padding:44px 0}
+        .pricing-card{background:var(--card-bg);border-radius:12px;padding:22px;border:1px solid rgba(255,255,255,0.04)}
+        .price-value{font-size:22px;font-weight:700;color:var(--blue-accent)}
+        .note{color:var(--text-secondary);font-size:14px}
+        .btn-primary-custom{background-color:var(--blue-accent);color:#fff;padding:10px 20px;border-radius:8px;border:none}
+        a.nav-link{color:var(--text-secondary)}
+        .site-footer{background:var(--card-bg);padding:28px 0;border-top:1px solid rgba(255,255,255,0.04);color:var(--text-secondary)}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">NovaShield</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navP">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navP">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container container-hero text-center">
+        <h1 class="fw-bold">Pricing</h1>
+        <p class="note">Prices shown are indicative. Final pricing depends on scope and complexity.</p>
+    </section>
+
+    <section class="container pb-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="pricing-card">
+                    <h3 class="fw-bold">India Pricing</h3>
+                    <hr style="border-color:rgba(255,255,255,0.04)">
+                    <p class="mb-2"><strong>Starter Audit</strong>: <span class="price-value">₹15,000 – ₹30,000</span></p>
+                    <p class="mb-2"><strong>Advanced VA/PT</strong>: <span class="price-value">₹50,000 – ₹1,00,000</span></p>
+                    <p class="note mt-3">Note: Final price depends on scope, asset count, authentication complexity, and testing windows.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="pricing-card">
+                    <h3 class="fw-bold">International Pricing</h3>
+                    <hr style="border-color:rgba(255,255,255,0.04)">
+                    <p class="mb-2"><strong>Starter Audit</strong>: <span class="price-value">$499</span></p>
+                    <p class="mb-2"><strong>Advanced Testing</strong>: <span class="price-value">$999+</span></p>
+                    <p class="note mt-3">Note: International pricing may vary; final quote will reflect scope and complexity.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a class="btn btn-primary-custom" href="index.html#contact">Request a Quote / Free Security Review</a>
+        </div>
+    </section>
+
+    <footer class="site-footer mt-5">
+        <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
+            <div>
+                <div class="footer-company">NovaShield Cybersecurity LLP</div>
+                <div class="text-secondary small">Contact: <a href="mailto:contact@novashield.in">contact@novashield.in</a> • <span>+91 8308628739</span> • <span>Wakad, Pune</span></div>
+            </div>
+            <div class="footer-links mt-3 mt-md-0">
+                <a href="responsible-disclosure.html">Responsible Disclosure Policy</a>
+                <span class="mx-2">•</span>
+                <a href="privacy.html">Privacy Policy</a>
+                <span class="mx-2">•</span>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -57,6 +57,56 @@
             background: radial-gradient(circle at 30% 30%, rgba(74,124,255,0.06), transparent 28%), radial-gradient(circle at 70% 70%, rgba(45,212,191,0.04), transparent 28%);
         }
 
+        /* Trust indicators beneath hero CTAs */
+        .trust-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            margin-top: 18px;
+        }
+        .trust-item {
+            background: rgba(255,255,255,0.02);
+            padding: 10px 14px;
+            border-radius: 10px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Core Services */
+        .services-section { background-color: transparent; padding: 60px 0 80px; }
+        .services-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px;
+            height: 100%;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .services-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(74,124,255,0.06); }
+        .services-card h5 { margin: 0; font-size: 18px; }
+        .service-detail { color: var(--text-secondary); font-size: 14px; margin-bottom: 8px; }
+        .service-label { font-weight: 700; color: var(--text-primary); font-size: 13px; margin-top: 8px; }
+        .service-list { margin: 6px 0 0 16px; color: var(--text-secondary); font-size: 14px; }
+        .service-list li { margin-bottom: 6px; }
+        .service-deliverables { color: var(--text-secondary); font-size: 14px; }
+
+        /* About / Founder */
+        .about-section { background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent 40%); padding: 60px 0; }
+        .founder-card { background: var(--card-bg); border-radius: 12px; padding: 18px; border: 1px solid rgba(255,255,255,0.04); }
+        .founder-avatar img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 4px solid rgba(74,124,255,0.06); box-shadow: 0 8px 30px rgba(10,14,39,0.6); }
+        .about-section .lead { font-size: 16px; color: var(--text-secondary); }
+        
+        @media (max-width: 768px) {
+            .shield-icon { width: 280px; height: 280px; }
+            .display-3 { font-size: 28px; }
+        }
+
         .shield-svg {
             width: 100%;
             max-width: 380px;
@@ -365,6 +415,20 @@
             background: linear-gradient(135deg, #4a7cff 0%, #2dd4bf 100%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         }
+
+        /* Footer */
+        .site-footer {
+            background: var(--card-bg);
+            border-top: 1px solid rgba(255,255,255,0.04);
+            padding: 28px 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        .site-footer a { color: var(--text-secondary); text-decoration: none; }
+        .site-footer a:hover { color: var(--text-primary); }
+        .site-footer .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+        .site-footer .footer-right { display:flex; gap:12px; align-items:center; }
+        .site-footer .footer-company { font-weight:700; color:var(--text-primary); }
     </style>
 </head>
 <body>
@@ -383,16 +447,22 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="index.html#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
+                            <a class="nav-link" href="services.html">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#pricing">Pricing</a>
+                            <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="careers.html">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#contact">Contact</a>
                         </li>
                         <li class="nav-item ms-3">
                             <button class="btn btn-outline-light btn-sm px-4">Sign Up</button>
@@ -405,9 +475,19 @@
         <div class="container mt-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-3 fw-bold mb-4">Next-Generation<br>Cybersecurity</h1>
-                    <p class="lead text-secondary mb-4">Advanced security solutions to<br>safeguard your digital assets.</p>
-                    <button class="btn btn-primary-custom btn-lg">Get Started</button>
+                    <h1 class="display-5 fw-bold mb-3">We Help Businesses Find Critical Security Flaws<br>Before Hackers Do</h1>
+                    <p class="lead text-secondary mb-4">Bug Bounty–Driven Security | Web &amp; API Testing | Vulnerability Assessment | Responsible Disclosure</p>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <a href="#contact" class="btn btn-primary-custom btn-lg me-2" role="button">Request a Free Security Review</a>
+                        <a href="services.html" class="btn btn-outline-custom btn-lg" role="button">View Our Services</a>
+                    </div>
+
+                    <div class="trust-list">
+                        <div class="trust-item">Bug Bounty–Driven Approach</div>
+                        <div class="trust-item">Responsible Disclosure Only</div>
+                        <div class="trust-item">Founder-Led Security Research</div>
+                        <div class="trust-item">Serving Indian &amp; Global Clients</div>
+                    </div>
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="shield-icon mx-auto">
@@ -437,6 +517,70 @@
                             <!-- Inner shield: inset border with a larger gap (reduced stroke + scaled down) -->
                             <path d="M100 36 L150 74 C150 108 122 146 100 172 C78 146 50 108 50 74 L100 36 Z" fill="none" stroke="url(#gInner)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" transform="translate(100 100) scale(0.78) translate(-100 -100)" vector-effect="non-scaling-stroke"/>
                         </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="display-5 fw-bold mb-2">Core Services</h2>
+                <p class="text-secondary mb-4">Focused security services to discover, validate, and responsibly disclose vulnerabilities.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="services-card">
+                        <h5>Vulnerability Assessment &amp; Penetration Testing</h5>
+                        <div class="service-detail"><strong>What this service is:</strong> Manual testing of web apps and APIs to identify real-world vulnerabilities.</div>
+                        <div class="service-label">Who it’s for</div>
+                        <ul class="service-list"><li>Product teams, startups, and enterprises running web apps or public APIs.</li></ul>
+                        <div class="service-label">What we test</div>
+                        <ul class="service-list"><li>Authentication &amp; authorization, session management, input validation, business logic, OWASP Top 10, API endpoints.</li></ul>
+                        <div class="service-label">Deliverables</div>
+                        <div class="service-deliverables">PoCs, severity rating, remediation guidance, executive summary, and prioritized findings.</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="services-card">
+                        <h5>Bug Bounty &amp; Security Research</h5>
+                        <div class="service-detail"><strong>What this service is:</strong> Coordinated bug bounty programs and focused security research to find complex, real-world vulnerabilities.</div>
+                        <div class="service-label">Who it’s for</div>
+                        <ul class="service-list"><li>Organizations seeking continual external testing and researcher engagement.</li></ul>
+                        <div class="service-label">What we test</div>
+                        <ul class="service-list"><li>Web, mobile, APIs, third-party integrations, and infrastructure depending on program scope.</li></ul>
+                        <div class="service-label">Deliverables</div>
+                        <div class="service-deliverables">Validated reports, PoCs, disclosure coordination, triage support.</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="services-card">
+                        <h5>Web &amp; API Security Testing</h5>
+                        <div class="service-detail"><strong>What this service is:</strong> In-depth security assessment focused specifically on web applications and APIs.</div>
+                        <div class="service-label">Who it’s for</div>
+                        <ul class="service-list"><li>Teams with public-facing applications and APIs.</li></ul>
+                        <div class="service-label">What we test</div>
+                        <ul class="service-list"><li>Endpoints, parameter tampering, authentication flows, rate limits, injection issues, data exposure.</li></ul>
+                        <div class="service-label">Deliverables</div>
+                        <div class="service-deliverables">Detailed technical findings, PoCs, remediation steps, testing checklist.</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="services-card">
+                        <h5>Security Consulting for Startups</h5>
+                        <div class="service-detail"><strong>What this service is:</strong> Advisory services to design secure architectures, threat modeling, and security program setup.</div>
+                        <div class="service-label">Who it’s for</div>
+                        <ul class="service-list"><li>Startups and early-stage companies building or scaling secure products.</li></ul>
+                        <div class="service-label">What we test</div>
+                        <ul class="service-list"><li>Architecture reviews, secure design, dependency risks, deployment pipelines.</li></ul>
+                        <div class="service-label">Deliverables</div>
+                        <div class="service-deliverables">Threat models, security roadmap, prioritized recommendations, and follow-up advisory sessions.</div>
                     </div>
                 </div>
             </div>
@@ -572,45 +716,8 @@
                     </ul>
                 </div>
             </div>
-        </nav> -->
+    <!-- Pricing section removed from homepage (moved to pricing.html) -->
 
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold mb-3">Simple, Transparent Pricing</h2>
-                <p class="lead text-secondary">Choose the plan that fits your needs.</p>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-4 mb-4">
-                    <div class="pricing-card">
-                        <h3 class="fw-bold mb-4">Basic</h3>
-                        <div class="price">
-                            $19<span style="font-size: 20px; color: var(--text-secondary);">/month</span>
-                        </div>
-                        <button class="btn btn-primary-custom mt-4 w-75">Get Started</button>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="pricing-card">
-                        <h3 class="fw-bold mb-4">Pro</h3>
-                        <div class="price">
-                            $49<span style="font-size: 20px; color: var(--text-secondary);">/month</span>
-                        </div>
-                        <button class="btn btn-primary-custom mt-4 w-75">Get Started</button>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="pricing-card">
-                        <h3 class="fw-bold mb-4">Enterprise</h3>
-                        <div class="price price-custom">Custom</div>
-                        <button class="btn btn-outline-custom mt-4 w-75">Get Started</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
   
 
@@ -948,9 +1055,9 @@
                     <h3 class="contact-title">Contact Us</h3>
                     <p class="contact-text">Have questions or need a demo? Our security team is ready to help — we'll reply within one business day.</p>
                     <div class="contact-info">
-                        <div class="info-item"><strong>Email:</strong> <a href="mailto:contact@novashield.example" style="color:var(--blue-accent); text-decoration:none;">contact@novashield.example</a></div>
-                        <div class="info-item"><strong>Phone:</strong> <span style="color:var(--text-secondary);">+1 (555) 123-4567</span></div>
-                        <div class="info-item"><strong>Address:</strong> <span style="color:var(--text-secondary);">123 Cyber Lane, Secure City</span></div>
+                        <div class="info-item"><strong>Email:</strong> <a href="mailto:contact@novashield.in" style="color:var(--blue-accent); text-decoration:none;">contact@novashield.in</a></div>
+                        <div class="info-item"><strong>Phone:</strong> <span style="color:var(--text-secondary);">+91 8308628739</span></div>
+                        <div class="info-item"><strong>Address:</strong> <span style="color:var(--text-secondary);">Wakad, Pune</span></div>
                     </div>
                 </div>
 
@@ -1237,6 +1344,22 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="site-footer mt-5">
+        <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
+            <div>
+                <div class="footer-company">NovaShield Cybersecurity LLP</div>
+                <div class="text-secondary small">Contact: <a href="mailto:contact@novashield.in">contact@novashield.in</a> • <span>+91 8308628739</span> • <span>Wakad, Pune</span></div>
+            </div>
+            <div class="footer-links mt-3 mt-md-0">
+                <a href="responsible-disclosure.html">Responsible Disclosure Policy</a>
+                <span class="mx-2">•</span>
+                <a href="privacy.html">Privacy Policy</a>
+                <span class="mx-2">•</span>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Services — NovaShield</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{--dark-navy:#0a0e27;--card-bg:#141b2d;--text-primary:#fff;--text-secondary:#a8b2d1;--blue-accent:#4a7cff}
+    body{background:var(--dark-navy);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;margin:0}
+    .navbar{background:transparent;padding:18px 0}
+    .hero{padding:56px 0;text-align:center}
+    .services-grid{padding:24px 0}
+    .service-card{background:var(--card-bg);border-radius:12px;padding:22px;border:1px solid rgba(255,255,255,0.04)}
+    .service-card h4{margin-bottom:10px}
+    .service-section{padding:60px 0}
+    .site-footer{background:var(--card-bg);padding:28px 0;border-top:1px solid rgba(255,255,255,0.04);color:var(--text-secondary)}
+    a.nav-link{color:var(--text-secondary)}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><div style="display:inline-block;width:28px;height:28px;background:linear-gradient(135deg,#4a7cff 0%,#2dd4bf 100%);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);margin-right:10px"></div>NovaShield</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMain">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="fw-bold">Services</h1>
+      <p class="text-secondary">Our core services — clearly structured and delivered with founder-led expertise.</p>
+    </div>
+  </section>
+
+  <section class="services-grid">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card">
+            <h4>Vulnerability Assessment &amp; Penetration Testing</h4>
+            <p class="text-secondary small mb-2">Manual web &amp; API testing to find real-world vulnerabilities.</p>
+            <a href="service-vapt.html" class="btn btn-outline-custom btn-sm">View Details</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card">
+            <h4>Bug Bounty &amp; Security Research</h4>
+            <p class="text-secondary small mb-2">Coordinated programs and deep research engagements.</p>
+            <a href="service-bugbounty.html" class="btn btn-outline-custom btn-sm">View Details</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card">
+            <h4>Web &amp; API Security Testing</h4>
+            <p class="text-secondary small mb-2">Focused assessments of app and API surfaces.</p>
+            <a href="service-webapi.html" class="btn btn-outline-custom btn-sm">View Details</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card">
+            <h4>Security Consulting for Startups</h4>
+            <p class="text-secondary small mb-2">Advisory, threat models, and secure design guidance.</p>
+            <a href="service-consulting.html" class="btn btn-outline-custom btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer mt-5">
+    <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
+      <div>
+        <div class="footer-company">NovaShield Cybersecurity LLP</div>
+        <div class="text-secondary small">Contact: <a href="mailto:contact@novashield.in">contact@novashield.in</a> • <span>+91 8308628739</span> • <span>Wakad, Pune</span></div>
+      </div>
+      <div class="footer-links mt-3 mt-md-0">
+        <a href="responsible-disclosure.html">Responsible Disclosure Policy</a>
+        <span class="mx-2">•</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="mx-2">•</span>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
