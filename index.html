@@ -427,15 +427,16 @@
         }
         
         .logo-text {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
             display: flex;
             align-items: center;
-            gap: 8px; /* tightened to match reference */
+            gap: 0px;
+            gap: -1px; /* tightened to match reference */
         }
         
         /* Logo: use original shape (no rounding), slightly larger and sharper */
-        .logo-img { width: 44px; height: 44px; object-fit: contain; border-radius: 0; box-shadow: 0 8px 30px rgba(74,124,255,0.12); filter: drop-shadow(0 8px 24px rgba(10,14,39,0.45)); transform: translateY(-2px); }
+        .logo-img { width: 50px; height: 44px; object-fit: contain; border-radius: 0; transform: translateY(3px); }
         .logo-word { font-size: 22px; font-weight: 800; color: #ffffff; letter-spacing: 0.2px; text-shadow: 0 6px 18px rgba(74,124,255,0.08); }
         .logo-icon { display: none; }
 
