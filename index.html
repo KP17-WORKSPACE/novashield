@@ -428,14 +428,15 @@
         
         .logo-text {
             font-size: 20px;
-            font-weight: 700;
+            font-weight: 800;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 8px; /* tightened to match reference */
         }
         
-        .logo-img { width: 40px; height: 40px; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 20px rgba(10,14,39,0.40); background: transparent; margin-right:0; }
-        .logo-word { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+        /* Logo: use original shape (no rounding), slightly larger and sharper */
+        .logo-img { width: 44px; height: 44px; object-fit: contain; border-radius: 0; box-shadow: 0 8px 30px rgba(74,124,255,0.12); filter: drop-shadow(0 8px 24px rgba(10,14,39,0.45)); transform: translateY(-2px); }
+        .logo-word { font-size: 22px; font-weight: 800; color: #ffffff; letter-spacing: 0.2px; text-shadow: 0 6px 18px rgba(74,124,255,0.08); }
         .logo-icon { display: none; }
 
         /* Footer */
