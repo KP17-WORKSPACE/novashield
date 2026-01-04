@@ -10,6 +10,9 @@
         :root { --dark-navy:#0a0e27; --card-bg:#141b2d; --text-primary:#fff; --text-secondary:#a8b2d1; --blue-accent:#4a7cff }
         body { background:var(--dark-navy); color:var(--text-primary); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif; margin:0 }
         .navbar{padding:18px 0}
+        .logo-img { width:40px; height:40px; object-fit:contain; border-radius:8px; box-shadow: 0 8px 22px rgba(10,14,39,0.45); mix-blend-mode: multiply; }
+        .logo-word { font-weight:700; color:var(--text-primary); margin-left:8px; }
+        .navbar .navbar-brand { isolation: isolate; }
         .founder-card{background:var(--card-bg);border-radius:12px;padding:22px;border:1px solid rgba(255,255,255,0.04)}
         .founder-avatar img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid rgba(74,124,255,0.06)}
         .content-card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
@@ -20,7 +23,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">NovaShield</a>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="Nova_logo.jpeg" alt="NovaShield" class="logo-img me-2" />
+                <span class="logo-word">NovaShield</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end" id="navMain">
                 <ul class="navbar-nav align-items-center">
