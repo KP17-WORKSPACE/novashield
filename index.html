@@ -76,25 +76,39 @@
         }
 
         /* Core Services */
-        .services-section { background-color: transparent; padding: 60px 0 80px; }
+        .services-section { background-color: transparent; padding: 60px 0 100px; }
+        .services-grid { gap: 28px; }
         .services-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 22px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+            border-radius: 14px;
+            padding: 26px;
             height: 100%;
             border: 1px solid rgba(255,255,255,0.04);
-            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            transition: transform 0.22s cubic-bezier(.2,.9,.2,1), box-shadow 0.22s;
             display: flex;
             flex-direction: column;
             gap: 12px;
+            min-height: 240px;
+            position: relative;
+            overflow: hidden;
         }
-        .services-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(74,124,255,0.06); }
-        .services-card h5 { margin: 0; font-size: 18px; }
+        .services-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(74,124,255,0.02), transparent 40%);
+            pointer-events: none;
+        }
+        .services-card:hover { transform: translateY(-8px); box-shadow: 0 18px 44px rgba(74,124,255,0.08); border-color: rgba(74,124,255,0.18); }
+        .service-icon { width: 52px; height: 52px; display: inline-flex; align-items:center; justify-content:center; border-radius:10px; background: linear-gradient(135deg,#4a7cff,#2dd4bf); color:white; font-size:22px; box-shadow: 0 6px 18px rgba(10,14,39,0.6); }
+        .services-card h5 { margin: 0; font-size: 18px; font-weight:700; }
         .service-detail { color: var(--text-secondary); font-size: 14px; margin-bottom: 8px; }
-        .service-label { font-weight: 700; color: var(--text-primary); font-size: 13px; margin-top: 8px; }
-        .service-list { margin: 6px 0 0 16px; color: var(--text-secondary); font-size: 14px; }
-        .service-list li { margin-bottom: 6px; }
-        .service-deliverables { color: var(--text-secondary); font-size: 14px; }
+        .service-list { margin: 8px 0 0 16px; color: var(--text-secondary); font-size: 14px; }
+        .service-cta { margin-top: auto; text-align: right; }
+        .service-cta a { color: var(--blue-accent); font-weight:600; text-decoration:none; }
+        .service-cta a:hover { text-decoration: underline; }
+        @media (max-width: 576px) { .service-icon { width:44px;height:44px;font-size:18px } }
+        
 
         /* About / Founder */
         .about-section { background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent 40%); padding: 60px 0; }
@@ -531,56 +545,72 @@
                 <p class="text-secondary mb-4">Focused security services to discover, validate, and responsibly disclose vulnerabilities.</p>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4 services-grid">
                 <div class="col-md-6 col-lg-3">
-                    <div class="services-card">
-                        <h5>Vulnerability Assessment &amp; Penetration Testing</h5>
-                        <div class="service-detail"><strong>What this service is:</strong> Manual testing of web apps and APIs to identify real-world vulnerabilities.</div>
+                    <div class="services-card d-flex flex-column">
+                        <div class="d-flex align-items-start gap-3 mb-2">
+                            <div class="service-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
+                            <div>
+                                <h5>Vulnerability Assessment &amp; Penetration Testing</h5>
+                                <div class="service-detail"><strong>Manual security testing</strong> of web apps &amp; APIs to uncover real-world vulnerabilities.</div>
+                            </div>
+                        </div>
                         <div class="service-label">Who it’s for</div>
                         <ul class="service-list"><li>Product teams, startups, and enterprises running web apps or public APIs.</li></ul>
                         <div class="service-label">What we test</div>
                         <ul class="service-list"><li>Authentication &amp; authorization, session management, input validation, business logic, OWASP Top 10, API endpoints.</li></ul>
-                        <div class="service-label">Deliverables</div>
-                        <div class="service-deliverables">PoCs, severity rating, remediation guidance, executive summary, and prioritized findings.</div>
+                        <div class="service-cta"><a href="services.html#vapt">Learn more →</a></div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <div class="services-card">
-                        <h5>Bug Bounty &amp; Security Research</h5>
-                        <div class="service-detail"><strong>What this service is:</strong> Coordinated bug bounty programs and focused security research to find complex, real-world vulnerabilities.</div>
+                    <div class="services-card d-flex flex-column">
+                        <div class="d-flex align-items-start gap-3 mb-2">
+                            <div class="service-icon"><i class="bi bi-bug" aria-hidden="true"></i></div>
+                            <div>
+                                <h5>Bug Bounty &amp; Security Research</h5>
+                                <div class="service-detail"><strong>Coordinated bug bounty programs</strong> and focused research to find complex, real-world issues.</div>
+                            </div>
+                        </div>
                         <div class="service-label">Who it’s for</div>
                         <ul class="service-list"><li>Organizations seeking continual external testing and researcher engagement.</li></ul>
                         <div class="service-label">What we test</div>
                         <ul class="service-list"><li>Web, mobile, APIs, third-party integrations, and infrastructure depending on program scope.</li></ul>
-                        <div class="service-label">Deliverables</div>
-                        <div class="service-deliverables">Validated reports, PoCs, disclosure coordination, triage support.</div>
+                        <div class="service-cta"><a href="services.html#bug-bounty">Learn more →</a></div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <div class="services-card">
-                        <h5>Web &amp; API Security Testing</h5>
-                        <div class="service-detail"><strong>What this service is:</strong> In-depth security assessment focused specifically on web applications and APIs.</div>
+                    <div class="services-card d-flex flex-column">
+                        <div class="d-flex align-items-start gap-3 mb-2">
+                            <div class="service-icon"><i class="bi bi-code-slash" aria-hidden="true"></i></div>
+                            <div>
+                                <h5>Web &amp; API Security Testing</h5>
+                                <div class="service-detail"><strong>In-depth assessment</strong> focused on web applications and APIs.</div>
+                            </div>
+                        </div>
                         <div class="service-label">Who it’s for</div>
                         <ul class="service-list"><li>Teams with public-facing applications and APIs.</li></ul>
                         <div class="service-label">What we test</div>
                         <ul class="service-list"><li>Endpoints, parameter tampering, authentication flows, rate limits, injection issues, data exposure.</li></ul>
-                        <div class="service-label">Deliverables</div>
-                        <div class="service-deliverables">Detailed technical findings, PoCs, remediation steps, testing checklist.</div>
+                        <div class="service-cta"><a href="services.html#web-api">Learn more →</a></div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-3">
-                    <div class="services-card">
-                        <h5>Security Consulting for Startups</h5>
-                        <div class="service-detail"><strong>What this service is:</strong> Advisory services to design secure architectures, threat modeling, and security program setup.</div>
+                    <div class="services-card d-flex flex-column">
+                        <div class="d-flex align-items-start gap-3 mb-2">
+                            <div class="service-icon"><i class="bi bi-people" aria-hidden="true"></i></div>
+                            <div>
+                                <h5>Security Consulting for Startups</h5>
+                                <div class="service-detail"><strong>Advisory services</strong> to design secure architectures, threat models, and programs.</div>
+                            </div>
+                        </div>
                         <div class="service-label">Who it’s for</div>
                         <ul class="service-list"><li>Startups and early-stage companies building or scaling secure products.</li></ul>
                         <div class="service-label">What we test</div>
                         <ul class="service-list"><li>Architecture reviews, secure design, dependency risks, deployment pipelines.</li></ul>
-                        <div class="service-label">Deliverables</div>
-                        <div class="service-deliverables">Threat models, security roadmap, prioritized recommendations, and follow-up advisory sessions.</div>
+                        <div class="service-cta"><a href="services.html#consulting">Learn more →</a></div>
                     </div>
                 </div>
             </div>
