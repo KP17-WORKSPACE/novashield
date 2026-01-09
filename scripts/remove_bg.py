@@ -3,8 +3,8 @@ import os
 from collections import Counter
 
 root = os.path.dirname(__file__)
-src = os.path.join(root, '..', 'NOVA_logo.png')
-dst = os.path.join(root, '..', 'NOVA_logo_transparent.png')
+src = os.path.join(root, '..', 'NOVA_LOGO.png')
+dst = os.path.join(root, '..', 'NOVA_LOGO_transparent.png')
 
 if not os.path.exists(src):
     print('SOURCE_MISSING', src)

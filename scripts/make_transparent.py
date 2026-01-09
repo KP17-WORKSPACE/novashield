@@ -1,7 +1,7 @@
 from PIL import Image
 import os
 src = os.path.join(os.path.dirname(__file__), '..', 'Nova_logo.jpeg')
-dst = os.path.join(os.path.dirname(__file__), '..', 'Nova_logo.png')
+dst = os.path.join(os.path.dirname(__file__), '..', 'NOVA_LOGO.png')
 print('SRC', src)
 if not os.path.exists(src):
     print('SOURCE_MISSING')

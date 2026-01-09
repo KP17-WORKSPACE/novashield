@@ -11,10 +11,12 @@
     body{background:var(--dark-navy);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;margin:0}
     .navbar{background:transparent;padding:18px 0}
     .hero{padding:56px 0;text-align:center}
-    .services-grid{padding:24px 0}
-    .service-card{background:var(--card-bg);border-radius:12px;padding:22px;border:1px solid rgba(255,255,255,0.04)}
-    .service-card h4{margin-bottom:10px}
+    .services-grid{padding:24px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch}
+    .service-card{background:var(--card-bg);border-radius:12px;padding:22px;border:1px solid rgba(255,255,255,0.04);display:flex;flex-direction:column;min-height:280px}
+    .service-card h4{margin-bottom:10px;flex-grow:1}
     .service-section{padding:60px 0}
+    .btn-outline-custom{background-color:transparent;color:#2dd4bf;padding:8px 14px;border-radius:8px;border:1px solid #2dd4bf;font-weight:500;transition:all 0.3s;text-decoration:none;display:inline-block}
+    .btn-outline-custom:hover{background-color:rgba(45,212,191,0.1);transform:translateY(-2px);color:#2dd4bf}
     .site-footer{background:var(--card-bg);padding:28px 0;border-top:1px solid rgba(255,255,255,0.04);color:var(--text-secondary)}
     a.nav-link{color:var(--text-secondary)}
   </style>
@@ -22,7 +24,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><div style="display:inline-block;width:28px;height:28px;background:linear-gradient(135deg,#4a7cff 0%,#2dd4bf 100%);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);margin-right:10px"></div>NovaShield</a>
+      <a class="navbar-brand" href="index.html"><img src="NOVA_LOGO.png" alt="NovaShield" style="width:44px;height:44px;object-fit:contain;margin-right:8px;vertical-align:middle">NovaShield</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse justify-content-end" id="navMain">
         <ul class="navbar-nav align-items-center">
@@ -75,6 +77,65 @@
             <a href="service-consulting.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section" style="background-color: var(--dark-navy); padding: 80px 0;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 style="font-size:2.5rem;font-weight:700;margin-bottom:10px">Services & Packages</h2>
+        <p class="text-secondary">Our security testing packages and pricing.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6 mb-4">
+          <div class="service-card" style="background:var(--card-bg);border-radius:16px;padding:40px 30px;text-align:center;border:1px solid rgba(255,255,255,0.05);transition:all 0.3s">
+            <h5 style="font-weight:700;margin-bottom:12px">Basic Web VAPT</h5>
+            <div style="font-size:48px;font-weight:700;color:#4a7cff;margin:20px 0">₹40,000</div>
+            <p class="text-secondary small">Vulnerability Assessment & Penetration Testing</p>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="service-card" style="background:var(--card-bg);border-radius:16px;padding:40px 30px;text-align:center;border:1px solid rgba(255,255,255,0.05);transition:all 0.3s">
+            <h5 style="font-weight:700;margin-bottom:12px">Web + API Testing</h5>
+            <div style="font-size:48px;font-weight:700;color:#4a7cff;margin:20px 0">₹60,000–₹1,20,000</div>
+            <p class="text-secondary small">Comprehensive web and API security testing</p>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="service-card" style="background:var(--card-bg);border-radius:16px;padding:40px 30px;text-align:center;border:1px solid rgba(255,255,255,0.05);transition:all 0.3s">
+            <h5 style="font-weight:700;margin-bottom:12px">Mobile App Pentest</h5>
+            <div style="font-size:48px;font-weight:700;color:#4a7cff;margin:20px 0">₹1,00,000+</div>
+            <p class="text-secondary small">In-depth mobile application testing</p>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="service-card" style="background:var(--card-bg);border-radius:16px;padding:40px 30px;text-align:center;border:1px solid rgba(255,255,255,0.05);transition:all 0.3s">
+            <h5 style="font-weight:700;margin-bottom:12px">Cloud Security Audit</h5>
+            <div style="font-size:48px;font-weight:700;color:#4a7cff;margin:20px 0">₹1,50,000+</div>
+            <p class="text-secondary small">Cloud infrastructure security assessment</p>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="service-card" style="background:var(--card-bg);border-radius:16px;padding:40px 30px;text-align:center;border:1px solid rgba(255,255,255,0.05);transition:all 0.3s">
+            <h5 style="font-weight:700;margin-bottom:12px">Retainer Plans</h5>
+            <div style="font-size:48px;font-weight:700;color:#4a7cff;margin:20px 0">₹25,000–₹75,000<span style="font-size:16px;font-weight:500;color:var(--text-secondary)">/month</span></div>
+            <p class="text-secondary small">Ongoing security monitoring and testing</p>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="service-card" style="background:var(--card-bg);border-radius:16px;padding:40px 30px;text-align:center;border:1px solid rgba(255,255,255,0.05);transition:all 0.3s">
+            <h5 style="font-weight:700;margin-bottom:12px">Additional Services</h5>
+            <ul class="text-secondary small mb-0" style="list-style:none;padding:0">
+              <li>✓ Fix Verification — Included</li>
+              <li>✓ Security Scorecards — Included</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <p class="text-secondary mb-3">Ready to secure your applications?</p>
+        <a href="index.html#contact" class="btn" style="background-color:#4a7cff;color:white;padding:12px 32px;border-radius:8px;border:none;font-weight:500;text-decoration:none">Request a Custom Quote</a>
       </div>
     </div>
   </section>
