@@ -462,7 +462,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center logo-text" href="#">
-                    <img src="NOVA_LOGO.png" alt="NovaShield" class="logo-img" />
+                    <img src="./NOVA_LOGO.png" alt="NovaShield" class="logo-img" />
                     <span class="logo-word">NovaShield</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -1063,17 +1063,24 @@
                 </div>
 
                 <div class="contact-right">
-                    <form class="contact-form" action="#" onsubmit="event.preventDefault(); alert('Thanks — we\'ll get back to you shortly.');">
+                    <form class="contact-form" id="contactForm" onsubmit="submitForm(event);">
                         <div class="mb-3">
-                            <input class="form-control" type="text" placeholder="Company name" required />
+                            <input class="form-control" type="text" id="companyName" placeholder="Company name" required />
                         </div>
                         <div class="mb-3">
-                            <input class="form-control" type="email" placeholder="Email address" required />
+                            <input class="form-control" type="email" id="emailAddress" placeholder="Email address" required />
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+                            <input class="form-control" type="text" id="fullName" placeholder="Full name" required />
                         </div>
-                        <button class="btn btn-primary-custom" type="submit">Send Message</button>
+                        <div class="mb-3">
+                            <input class="form-control" type="tel" id="phoneNumber" placeholder="Phone number (optional)" />
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="messageText" rows="4" placeholder="Message" required></textarea>
+                        </div>
+                        <button class="btn btn-primary-custom" type="submit" id="submitBtn">Send Message</button>
+                        <div id="formMessage" style="margin-top: 12px; font-size: 14px; display: none;"></div>
                     </form>
                 </div>
             </div>
@@ -1345,6 +1352,118 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Backend API Configuration
+        const API_BASE_URL = 'https://novashield-api.onrender.com'; // Update with your Render URL after deployment
+        
+        // Contact form submission handler
+        async function submitForm(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('fullName').value.trim(),
+                email: document.getElementById('emailAddress').value.trim(),
+                company: document.getElementById('companyName').value.trim(),
+                phone: document.getElementById('phoneNumber').value.trim() || null,
+                message: document.getElementById('messageText').value.trim()
+            };
+            
+            // Validate required fields
+            if (!formData.name || !formData.email || !formData.message) {
+                showMessage('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Disable submit button during submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                // Try multiple backend URLs (development and production)
+                const backendUrls = [
+                    `${API_BASE_URL}/api/submit-form`,  // Production (Render)
+                    'http://localhost:5000/api/submit-form',  // Development
+                    'http://127.0.0.1:5000/api/submit-form',  // Development alternative
+                ];
+                
+                let lastError = null;
+                let success = false;
+                
+                for (const url of backendUrls) {
+                    try {
+                        const response = await fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(formData),
+                            signal: AbortSignal.timeout(5000)
+                        });
+                        
+                        if (!response.ok && response.status !== 400) {
+                            continue; // Try next URL
+                        }
+                        
+                        const result = await response.json();
+                        
+                        if (response.ok && result.status === 'success') {
+                            showMessage('Thank you! Your message has been sent. We\'ll get back to you shortly.', 'success');
+                            form.reset();
+                            success = true;
+                            break;
+                        } else if (response.ok) {
+                            showMessage('Message submitted! Check your email for confirmation.', 'success');
+                            form.reset();
+                            success = true;
+                            break;
+                        } else {
+                            lastError = result.detail || 'Unable to send message';
+                        }
+                    } catch (err) {
+                        lastError = err;
+                        continue;
+                    }
+                }
+                
+                if (!success && lastError) {
+                    console.error('Form submission error:', lastError);
+                    showMessage('⚠️ Backend server is not responding. Please try again later or contact admin@novashield.in directly.', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showMessage('⚠️ Network error: Please check your internet connection. You can also email us directly at admin@novashield.in', 'error');
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        }
+        
+        function showMessage(message, type) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = message;
+            formMessage.style.display = 'block';
+            
+            if (type === 'success') {
+                formMessage.style.color = '#2dd4bf';
+            } else {
+                formMessage.style.color = '#ff6b6b';
+            }
+            
+            // Auto-hide success message after 5 seconds, error stays longer
+            const hideDelay = type === 'success' ? 5000 : 8000;
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, hideDelay);
+        }
+    </script>
 
     <footer class="site-footer mt-5">
         <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
