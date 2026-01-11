@@ -13,13 +13,19 @@
     .role-card{background:var(--card-bg);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
     .site-footer{background:var(--card-bg);padding:28px 0;border-top:1px solid rgba(255,255,255,0.04);color:var(--text-secondary)}
     a.nav-link{color:var(--text-secondary)}
+    /* Logo alignment */
+    .logo-img { width:44px; height:44px; object-fit:contain; border-radius:0; box-shadow: 0 8px 30px rgba(74,124,255,0.12); filter: drop-shadow(0 8px 24px rgba(10,14,39,0.45)); transform: translateY(-2px); background: transparent; margin-right:10px; }
+    .logo-word { font-weight:800; color:var(--text-primary); font-size:22px; letter-spacing:0.2px; text-shadow: 0 6px 18px rgba(74,124,255,0.08); }
     .note { color: var(--text-secondary); font-size: 13px; }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="./NOVA_logo.png" alt="NovaShield" style="width:44px;height:44px;object-fit:contain;margin-right:8px;vertical-align:middle">NovaShield</a>
+      <a class="navbar-brand d-flex align-items-center logo-text" href="index.html">
+        <img src="./NOVA_logo.png" alt="NovaShield" class="logo-img" />
+        <span class="logo-word">NovaShield</span>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse justify-content-end" id="navMain">
         <ul class="navbar-nav align-items-center">
