@@ -47,9 +47,11 @@
             transform: translate(0, -50%);
         }
         
+        /* Responsive shield container: caps at 400px but never overflows smaller viewports */
         .shield-icon {
-            width: 400px;
-            height: 400px;
+            width: min(400px, 100%);
+            max-width: 400px;
+            aspect-ratio: 1 / 1;
             position: relative;
             display: flex;
             align-items: center;
@@ -76,7 +78,7 @@
         }
 
         /* Core Services */
-        .services-section { background-color: transparent; padding: 80px 0 120px; position: relative; }
+        .services-section { background-color: transparent; padding: 80px 0 120px; position: relative; overflow: hidden; }
         .services-section::before {
             content: '';
             position: absolute;
@@ -84,11 +86,12 @@
             top: -60px;
             width: 420px;
             height: 420px;
+            max-width: 60%;
             background: radial-gradient(circle at 30% 30%, rgba(74,124,255,0.06), transparent 30%);
             filter: blur(28px);
             opacity: 0.28;
             pointer-events: none;
-            transform: translateX(20%);
+            transform: translateX(10%);
         }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; align-items: stretch; grid-auto-rows: 1fr; }
         .services-card {
@@ -118,7 +121,12 @@
         .service-cta .btn { padding:8px 14px; border-radius:8px; font-weight:600; }
         .service-tag { display:inline-block; background: rgba(74,124,255,0.08); color: var(--blue-accent); padding:6px 10px; border-radius:8px; font-weight:700; font-size:12px; }
         @media (max-width: 768px) { .service-icon { width:56px; height:56px; font-size:22px } .services-section { padding: 60px 0 80px; } }
-        @media (max-width: 480px) { .services-grid { grid-template-columns: 1fr; } .service-list { margin-left: 14px; } }
+        @media (max-width: 480px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .service-list { margin-left: 14px; }
+            .shield-icon { width: min(220px, 88%); aspect-ratio: 1 / 1; }
+            .services-section::before { width: 180px; height: 180px; top: -30px; transform: translateX(0); opacity: 0.16; }
+        }
         
 
         /* About / Founder */
@@ -128,8 +136,9 @@
         .about-section .lead { font-size: 16px; color: var(--text-secondary); }
         
         @media (max-width: 768px) {
-            .shield-icon { width: 280px; height: 280px; }
+            .shield-icon { width: min(280px, 80%); aspect-ratio: 1 / 1; }
             .display-3 { font-size: 28px; }
+            .services-section::before { width: 240px; height: 240px; top: -40px; transform: translateX(0); opacity: 0.22; }
         }
 
         .shield-svg {
